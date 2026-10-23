@@ -1,8 +1,15 @@
 # Urban Sustainable Mobility Database (Milan)
 
 <div align="center">
-  
-**Click below to switch language / Clicca sotto per cambiare lingua:**
+
+### Select Language / Seleziona Lingua
+<a href="#-english-version">
+  <img src="https://flagcdn.com/32x24/gb.png" alt="English" width="32" height="24">
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#-versione-italiana">
+  <img src="https://flagcdn.com/32x24/it.png" alt="Italiano" width="32" height="24">
+</a>
 
 </div>
 
@@ -164,23 +171,6 @@ GROUP BY VE.CodiceMezzo;
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
 
-
-## Setup & Execution
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/<your-username>/milan-sustainable-mobility-db.git
-   cd milan-sustainable-mobility-db
-   ```
-2. Build schema and populate test seed data:
-   ```bash
-   mysql -u root -p < sql/01_schema_e_popolamento.sql
-   ```
-3. Run analytical queries:
-   ```bash
-   mysql -u root -p progetto_basi_di_dati < sql/02_interrogazioni.sql
-   ```
-
 </details>
 
 <details>
@@ -325,22 +315,5 @@ GROUP BY VE.CodiceMezzo;
 | `21` | 1 |
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
-
-
-## Istruzioni per l'Esecuzione
-
-1. Clonare la repository locale:
-   ```bash
-   git clone https://github.com/<your-username>/milan-sustainable-mobility-db.git
-   cd milan-sustainable-mobility-db
-   ```
-2. Creare e popolare il database in MySQL:
-   ```bash
-   mysql -u root -p < sql/01_schema_e_popolamento.sql
-   ```
-3. Eseguire le interrogazioni analitiche:
-   ```bash
-   mysql -u root -p progetto_basi_di_dati < sql/02_interrogazioni.sql
-   ```
 
 </details>
