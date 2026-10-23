@@ -175,41 +175,6 @@ GROUP BY VE.CodiceMezzo;
 
 ---
 
-### 4. Residents Loyal to a Single Rental Hub
-Identifies citizens who booked electric vehicles exclusively from one single rental station:
-```sql
-SELECT PR.CodiceFiscaleResidente
-FROM PRENOTAZIONE PR 
-JOIN VEICOLO_ELETTRICO VE ON PR.CodiceMezzo = VE.CodiceMezzo
-GROUP BY PR.CodiceFiscaleResidente
-HAVING COUNT(DISTINCT VE.CodicePuntoNoleggio) = 1;
-```
-**Output:**
-* `CNTNTN80P10F205N`
-* `RSSMRA85M01H501Z`
-
----
-
-### 5. High-Capacity Rental Stations Without Premium Bookings
-Identifies stations managing more than 30 vehicles that have never recorded a booking from a Premium subscriber:
-```sql
-SELECT PG.CodicePuntoNoleggio
-FROM PUNTO_DI_NOLEGGIO PG 
-JOIN VEICOLO_ELETTRICO VE1 ON PG.CodicePuntoNoleggio = VE1.CodicePuntoNoleggio
-WHERE PG.CodicePuntoNoleggio NOT IN (
-    SELECT VE2.CodicePuntoNoleggio
-    FROM VEICOLO_ELETTRICO VE2 
-    JOIN PRENOTAZIONE PR ON VE2.CodiceMezzo = PR.CodiceMezzo
-    JOIN RESIDENTE R ON PR.CodiceFiscaleResidente = R.CodiceFiscale
-    WHERE R.Abbonamento = TRUE
-)
-GROUP BY PG.CodicePuntoNoleggio
-HAVING COUNT(DISTINCT VE1.CodiceMezzo) > 30;
-```
-**Output:** Empty set (all high-capacity stations had at least one booking by a premium user).
-
----
-
 ## 🚀 Setup & Execution
 
 1. Clone this repository:
@@ -373,41 +338,6 @@ GROUP BY VE.CodiceMezzo;
 | `21` | 1 |
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
-
----
-
-### 4. Residenti Fedeli allo Stesso Punto di Noleggio
-Identifica i residenti che hanno effettuato prenotazioni di veicoli elettrici sempre e solo dal medesimo punto di noleggio:
-```sql
-SELECT PR.CodiceFiscaleResidente
-FROM PRENOTAZIONE PR 
-JOIN VEICOLO_ELETTRICO VE ON PR.CodiceMezzo = VE.CodiceMezzo
-GROUP BY PR.CodiceFiscaleResidente
-HAVING COUNT(DISTINCT VE.CodicePuntoNoleggio) = 1;
-```
-**Risultato:**
-* `CNTNTN80P10F205N`
-* `RSSMRA85M01H501Z`
-
----
-
-### 5. Punti di Noleggio ad Alta Capacità Senza Utenza Premium
-Identifica i punti di noleggio con oltre 30 veicoli in cui non è mai avvenuta una prenotazione da parte di residenti premium:
-```sql
-SELECT PG.CodicePuntoNoleggio
-FROM PUNTO_DI_NOLEGGIO PG 
-JOIN VEICOLO_ELETTRICO VE1 ON PG.CodicePuntoNoleggio = VE1.CodicePuntoNoleggio
-WHERE PG.CodicePuntoNoleggio NOT IN (
-    SELECT VE2.CodicePuntoNoleggio
-    FROM VEICOLO_ELETTRICO VE2 
-    JOIN PRENOTAZIONE PR ON VE2.CodiceMezzo = PR.CodiceMezzo
-    JOIN RESIDENTE R ON PR.CodiceFiscaleResidente = R.CodiceFiscale
-    WHERE R.Abbonamento = TRUE
-)
-GROUP BY PG.CodicePuntoNoleggio
-HAVING COUNT(DISTINCT VE1.CodiceMezzo) > 30;
-```
-**Risultato:** Insieme vuoto (tutti i centri ad alta capacità hanno registrato almeno una prenotazione da utenti premium).
 
 ---
 
