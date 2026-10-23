@@ -3,11 +3,11 @@
 <div align="center">
 
 ### Select Language / Seleziona Lingua
-<a href="#-english-version">
+<a href="#en">
   <img src="https://flagcdn.com/32x24/gb.png" alt="English" width="32" height="24">
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#-versione-italiana">
+<a href="#it">
   <img src="https://flagcdn.com/32x24/it.png" alt="Italiano" width="32" height="24">
 </a>
 
@@ -15,10 +15,8 @@
 
 ---
 
-<details open>
-<summary>🇬🇧 <b>English Version (Click to collapse/expand)</b></summary>
-
-<br>
+<a id="en"></a>
+# 🇬🇧 English Version
 
 ## Project Overview
 
@@ -171,12 +169,9 @@ GROUP BY VE.CodiceMezzo;
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
 
-</details>
 
-<details>
-<summary>🇮🇹 <b>Versione Italiana (Clicca per espandere/comprimere)</b></summary>
-
-<br>
+<a id="it"></a>
+# 🇮🇹 Versione Italiana
 
 ## Descrizione del Progetto
 
@@ -315,5 +310,3 @@ GROUP BY VE.CodiceMezzo;
 | `21` | 1 |
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
-
-</details>
