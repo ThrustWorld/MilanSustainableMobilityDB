@@ -251,7 +251,7 @@ Durante la prima fase di modellazione sono state formalizzate tre gerarchie di g
 
 > **Nota su `Bicicletta`**: Per l'entità bicicletta non è stata introdotta una generalizzazione formale in quanto i modelli tradizionali e a pedalata assistita condividono i medesimi attributi (marca, colore, deposito). La distinzione è mantenuta in modo pulito tramite l'attributo discriminatore booleano `Tipo`.
 
-![Schema E-R Concettuale](docs/schema-er-concettuale.png)
+![Schema E-R Concettuale](Docs/Schema_ER.png)
 
 ### 2. Ristrutturazione Schema E-R (Eliminazione Generalizzazioni)
 Per ottimizzare le prestazioni fisiche su DBMS ed evitare operazioni di join ridondanti:
@@ -259,7 +259,7 @@ Per ottimizzare le prestazioni fisiche su DBMS ed evitare operazioni di join rid
 * **Generalizzazione `Veicolo Elettrico`** $\to$ **Accorpamento delle figlie nel padre**: Scooter e automobili confluiscono in `VEICOLO_ELETTRICO`. La discriminante `Tipo` (`TRUE = Automobile`, `FALSE = Scooter`) regola la valorizzazione obbligatoria dei dati esclusivi delle auto (`NumeroPostiOmologatiAutomobile`, `ChilometriPercorsiAutomobile`).
 * **Generalizzazione `Mezzo`** $\to$ **Mantenimento delle entità con relazioni (1,1) - (0,1)**: L'entità padre `MEZZO` è mantenuta separata e collegata alle figlie `BICICLETTA` e `VEICOLO_ELETTRICO`. Dal lato delle figlie la cardinalità è $(1,1)$, mentre dal lato padre è $(0,1)$ poiché la copertura è esclusiva (un mezzo non può essere contemporaneamente sia bicicletta che auto/scooter). La separazione fisica è necessaria perché le due categorie rispondono a modelli logistici incompatibili (depositi automatizzati per biciclette vs stazioni presidiate per veicoli a motore).
 
-![Schema E-R Ristrutturato](docs/schema-er-ristrutturato.png)
+![Schema E-R Ristrutturato](Docs/Schema_ER_ristrutturato.png)
 
 ### 3. Traduzione nel Modello Relazionale
 Rappresentazione del modello logico con identificazione delle chiavi primarie (sottolineate) e delle chiavi esterne:
@@ -274,7 +274,8 @@ Rappresentazione del modello logico con identificazione delle chiavi primarie (s
 * `STATISTICA` (<u>Data</u>, <u>CodiceFiscaleResidente</u>, <u>NumeroProgressivoPistaCiclabile</u>, NumeroVoltePercorso)
 * `PISTA_CICLABILE` (<u>NumeroProgressivo</u>, Lunghezza, PendenzaMedia)
 
-![Modello Relazionale](docs/schema-relazionale.png)
+![Modello Relazionale](Docs/Traduzione_modello_relazionale.png)
+![Modello Relazionale_2](Docs/Traduzione_modello_relazionale_2.png)
 
 ---
 
