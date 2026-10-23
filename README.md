@@ -182,15 +182,15 @@ Di seguito viene riportata la mappatura concettuale tra le tabelle relazionali i
 
 | Tabella Relazionale | Descrizione e Ruolo nello Schema |
 | :--- | :--- |
-| `RESIDENTE` | Residenti del Comune di Milano registrati al servizio, suddivisi nelle categorie *Standard* e *Premium* (questi ultimi con diritto a percentuali di sconto sui noleggi).[cite: 1, 14, 22] |
-| `MEZZO` | Entità padre astratta che garantisce un codice identificativo univoco (`CodiceMezzo`) a tutti i veicoli della flotta comunale.[cite: 15, 23] |
-| `BICICLETTA` | Biciclette (sia tradizionali che a pedalata assistita) distribuite nei depositi territoriali, fruibili gratuitamente dai residenti registrati.[cite: 1, 14, 24] |
-| `VEICOLO_ELETTRICO` | Flotta a motore a tariffazione oraria (scooter e automobili), descritta da autonomia, targa, cilindrata e punto di noleggio di assegnazione.[cite: 1, 14, 24, 25] |
-| `DEPOSITO` | Stazioni fisiche diffuse in città, georeferenziate tramite coordinate (latitudine e longitudine), dotate di capienza massima e conteggio bici presenti.[cite: 1, 14, 23] |
-| `PUNTO_DI_NOLEGGIO` | Hub fisici presidiati con recapiti di contatto (telefono, email, sito web) a cui sono associati in modo univoco i veicoli elettrici.[cite: 1, 14, 23] |
-| `PRENOTAZIONE` | Registrazione dell'evento di noleggio che associa un utente a un mezzo, definendo data/ora di inizio, data/ora di fine e l'eventuale costo complessivo.[cite: 1, 14, 25] |
-| `PISTA_CICLABILE` | Tracciati ciclabili comunali censiti tramite identificativo progressivo, lunghezza chilometrica e pendenza media.[cite: 1, 14, 22] |
-| `STATISTICA` | Entità di collegamento per raccogliere dati aggregati a fini statistici: memorizza per ogni residente e per ogni pista le date e la frequenza di passaggio.[cite: 1, 14, 26] |
+| `RESIDENTE` | Residenti del Comune di Milano registrati al servizio, suddivisi nelle categorie *Standard* e *Premium* (questi ultimi con diritto a percentuali di sconto sui noleggi). |
+| `MEZZO` | Entità padre astratta che garantisce un codice identificativo univoco (`CodiceMezzo`) a tutti i veicoli della flotta comunale. |
+| `BICICLETTA` | Biciclette (sia tradizionali che a pedalata assistita) distribuite nei depositi territoriali, fruibili gratuitamente dai residenti registrati. |
+| `VEICOLO_ELETTRICO` | Flotta a motore a tariffazione oraria (scooter e automobili), descritta da autonomia, targa, cilindrata e punto di noleggio di assegnazione. |
+| `DEPOSITO` | Stazioni fisiche diffuse in città, georeferenziate tramite coordinate (latitudine e longitudine), dotate di capienza massima e conteggio bici presenti. |
+| `PUNTO_DI_NOLEGGIO` | Hub fisici presidiati con recapiti di contatto (telefono, email, sito web) a cui sono associati in modo univoco i veicoli elettrici. |
+| `PRENOTAZIONE` | Registrazione dell'evento di noleggio che associa un utente a un mezzo, definendo data/ora di inizio, data/ora di fine e l'eventuale costo complessivo. |
+| `PISTA_CICLABILE` | Tracciati ciclabili comunali censiti tramite identificativo progressivo, lunghezza chilometrica e pendenza media. |
+| `STATISTICA` | Entità di collegamento per raccogliere dati aggregati a fini statistici: memorizza per ogni residente e per ogni pista le date e la frequenza di passaggio. |
 
 
 ## Architettura e Scelte di Progettazione
