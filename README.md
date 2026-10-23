@@ -177,6 +177,7 @@ Il sistema gestisce il parco biciclette condivise (tradizionali e a pedalata ass
 
 La specifica completa dei requisiti operativi, il testo della traccia e gli obiettivi del Comune di Milano sono consultabili nel documento [`Docs/Requisiti_progetto.pdf`](Docs/Requisiti_progetto.pdf).
 
+
 ## Mappatura delle Entità di Dominio
 
 Di seguito viene riportata la mappatura concettuale tra le tabelle relazionali implementate nella base di dati e i relativi requisiti di business:
@@ -263,6 +264,8 @@ Tutti i requisiti operativi sono formalizzati tramite vincoli SQL espliciti nel 
   * `CASCADE` su `RESIDENTE`: Rimuovendo un cittadino, le relative prenotazioni e statistiche d'uso vengono eliminate a cascata per garantire la consistenza referenziale.
   * `NO ACTION` su `DEPOSITO` e `PUNTO_DI_NOLEGGIO`: Impedisce l'eliminazione fisica di stazioni o depositi qualora vi siano ancora mezzi o biciclette ad essi assegnati.
 
+Lo script DDL completo con la definizione di tutte le tabelle, i vincoli `CHECK`, le chiavi primarie/esterne e il popolamento con i dati di test è disponibile nel file [`SQL/Struttura_e_popolamento.sql`](SQL/Struttura_e_popolamento.sql)
+
 
 ## Interrogazioni SQL di Esempio
 
@@ -324,3 +327,5 @@ GROUP BY VE.CodiceMezzo;
 | `21` | 1 |
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
+
+L'elenco integrale di tutte le query di collaudo e di analisi statistica previste dalla specifica è consultabile ed eseguibile nel file [`SQL/Interrogazioni.sql`](SQL/Interrogazioni.sql)
