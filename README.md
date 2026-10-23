@@ -16,7 +16,8 @@
 ---
 
 <a id="en"></a>
-# 🇬🇧 English Version
+
+# <img src="https://flagcdn.com/32x24/gb.png" alt="English" width="32" height="24">
 
 ## Project Overview
 
