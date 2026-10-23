@@ -175,6 +175,7 @@ Progettazione concettuale, logica e fisica di una base di dati relazionale a sup
 
 Il sistema gestisce il parco biciclette condivise (tradizionali e a pedalata assistita), la flotta di veicoli elettrici a noleggio (scooter e automobili), i profili dei residenti con relative fasce di abbonamento agevolato, le prenotazioni e il monitoraggio statistico dei transiti sulle piste ciclabili cittadine.
 
+La specifica completa dei requisiti operativi, il testo della traccia e gli obiettivi del Comune di Milano sono consultabili nel documento [`Docs/Requisiti_progetto.pdf`](Docs/Requisiti_progetto.pdf).
 
 ## Mappatura delle Entità di Dominio
 
