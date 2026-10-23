@@ -35,7 +35,6 @@ The physical database schema implements standard Italian domain naming. The tabl
 | `PISTA_CICLABILE` | Cycle Path / Bike Lane | Milan bike tracks monitored by ID, length, and average slope. |
 | `STATISTICA` | Transit Record | Historical logs tracking resident transit frequency across cycle paths. |
 
----
 
 ## Conceptual & Logical Architecture
 
@@ -73,7 +72,6 @@ Primary keys are underlined; referential constraints are maintained across relat
 ![Relational Model](Docs/Traduzione_modello_relazionale.png)
 ![Relational Model_2](Docs/Traduzione_modello_relazionale_2.png)
 
----
 
 ## Business Rules & Integrity Constraints
 
@@ -105,7 +103,6 @@ Primary keys are underlined; referential constraints are maintained across relat
   * `CASCADE` on `RESIDENTE`: User account deletion automatically purges associated bookings and transit records.
   * `NO ACTION` on `DEPOSITO` and `PUNTO_DI_NOLEGGIO`: Prevents accidental deletion of physical stations containing active vehicles.
 
----
 
 ## Analytical Queries Showcase
 
@@ -168,7 +165,6 @@ GROUP BY VE.CodiceMezzo;
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
 
----
 
 ## Setup & Execution
 
@@ -199,7 +195,6 @@ Progettazione concettuale, logica e fisica di una base di dati relazionale a sup
 
 Il sistema gestisce il parco biciclette condivise (tradizionali e a pedalata assistita), la flotta di veicoli elettrici a noleggio (scooter e automobili), i profili dei residenti con relative fasce di abbonamento agevolato, le prenotazioni e il monitoraggio statistico dei transiti sulle piste ciclabili cittadine.
 
----
 
 ## Architettura e Scelte di Progettazione
 
@@ -237,7 +232,6 @@ Rappresentazione del modello logico con identificazione delle chiavi primarie (s
 ![Modello Relazionale](Docs/Traduzione_modello_relazionale.png)
 ![Modello Relazionale_2](Docs/Traduzione_modello_relazionale_2.png)
 
----
 
 ## Vincoli di Integrità e Regole di Business
 
@@ -271,7 +265,6 @@ Tutti i requisiti operativi sono formalizzati tramite vincoli SQL espliciti nel 
   * `CASCADE` su `RESIDENTE`: Rimuovendo un cittadino, le relative prenotazioni e statistiche d'uso vengono eliminate a cascata per garantire la consistenza referenziale.
   * `NO ACTION` su `DEPOSITO` e `PUNTO_DI_NOLEGGIO`: Impedisce l'eliminazione fisica di stazioni o depositi qualora vi siano ancora mezzi o biciclette ad essi assegnati.
 
----
 
 ## Interrogazioni SQL di Esempio
 
@@ -334,7 +327,6 @@ GROUP BY VE.CodiceMezzo;
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
 
----
 
 ## Istruzioni per l'Esecuzione
 
