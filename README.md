@@ -52,7 +52,7 @@ The initial conceptual schema established three key generalization hierarchies (
 
 > **Design Choice on Bicycles**: The `Bicicletta` entity does not require an $ISA$ generalization because traditional and pedal-assisted bicycles share identical attributes (brand, color, depot). The distinction is handled via a boolean discriminator `Tipo`.
 
-![Conceptual E-R Diagram](docs/schema-er-concettuale.png)
+![Conceptual E-R Diagram](Docs/Schema_ER.png)
 
 ### 2. Restructured E-R Model (Generalization Elimination)
 To optimize physical schema performance and avoid expensive joins:
@@ -60,7 +60,7 @@ To optimize physical schema performance and avoid expensive joins:
 * **`Veicolo Elettrico`**: Folded upwards into `VEICOLO_ELETTRICO`. The boolean flag `Tipo` discriminates between cars (`TRUE`) and scooters (`FALSE`), regulating car-exclusive metrics (`ChilometriPercorsiAutomobile`, `NumeroPostiOmologatiAutomobile`).
 * **`Mezzo`**: Preserved as a distinct parent table with $(1,1) \leftrightarrow (0,1)$ relationships. Bicycles and electric vehicles belong to incompatible operational logistics (automated docking depots vs. staffed rental stations); keeping them physically distinct prevents structural null-bloat and preserves referential integrity.
 
-![Restructured E-R Diagram](docs/schema-er-ristrutturato.png)
+![Restructured E-R Diagram](Docs/Schema_ER_ristrutturato.png)
 
 ### 3. Logical Relational Model
 Primary keys are underlined; referential constraints are maintained across relations:
@@ -75,7 +75,8 @@ Primary keys are underlined; referential constraints are maintained across relat
 * `STATISTICA` (<u>Data</u>, <u>CodiceFiscaleResidente</u>, <u>NumeroProgressivoPistaCiclabile</u>, NumeroVoltePercorso)
 * `PISTA_CICLABILE` (<u>NumeroProgressivo</u>, Lunghezza, PendenzaMedia)
 
-![Relational Model](docs/schema-relazionale.png)
+![Relational Model](Docs/Traduzione_modello_relazionale.png)
+![Relational Model_2](Docs/Traduzione_modello_relazionale_2.png)
 
 ---
 
