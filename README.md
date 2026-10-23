@@ -16,10 +16,7 @@
 ---
 
 <a id="en"></a>
-
-# <img src="https://flagcdn.com/32x24/gb.png" alt="English" width="32" height="24">
-
-## Project Overview
+## <img src="https://flagcdn.com/32x24/gb.png" alt="English" width="32" height="24"> Project Overview
 
 Relational database system designed to model and manage the shared urban green mobility infrastructure for the Municipality of Milan (*Comune di Milano*). The system coordinates docked municipal bicycles (both traditional and pedal-assisted), electric vehicle rental fleets (cars and scooters), citizen subscription tiers, reservation lifecycles, and cycle route usage statistics.
 
@@ -172,9 +169,7 @@ GROUP BY VE.CodiceMezzo;
 
 
 <a id="it"></a>
-# 🇮🇹 Versione Italiana
-
-## Descrizione del Progetto
+## <img src="https://flagcdn.com/32x24/it.png" alt="Italiano" width="32" height="24"> Descrizione del Progetto
 
 Progettazione concettuale, logica e fisica di una base di dati relazionale a supporto del servizio di mobilità sostenibile promosso dal **Comune di Milano**. 
 
