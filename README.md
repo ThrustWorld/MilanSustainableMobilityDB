@@ -1,3 +1,4 @@
+<a id="top"></a>
 # Urban Sustainable Mobility Database (Milan)
 
 <div align="center">
@@ -173,6 +174,9 @@ GROUP BY VE.CodiceMezzo;
 
 The full suite of analytical queries, aggregation logic, and reporting statements is available in [`SQL/Interrogazioni.sql`](SQL/Interrogazioni.sql).
 
+<p align="right"><a href="#top">⬆ Back to top</a></p>.
+
+---
 
 <a id="it"></a>
 ## <img src="https://flagcdn.com/32x24/it.png" alt="Italiano" width="32" height="24"> Descrizione del Progetto
@@ -335,3 +339,5 @@ GROUP BY VE.CodiceMezzo;
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
 
 L'elenco integrale di tutte le query di collaudo e di analisi statistica previste dalla specifica è consultabile ed eseguibile nel file [`SQL/Interrogazioni.sql`](SQL/Interrogazioni.sql).
+
+<p align="right"><a href="#top">⬆ Torna su</a></p>.
