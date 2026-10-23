@@ -174,7 +174,7 @@ GROUP BY VE.CodiceMezzo;
 
 The full suite of analytical queries, aggregation logic, and reporting statements is available in [`SQL/Interrogazioni.sql`](SQL/Interrogazioni.sql).
 
-<p align="right"><a href="#top">⬆ Back to top</a></p>.
+<p align="center"><a href="#top">⬆ Back to top</a></p>
 
 ---
 
@@ -340,4 +340,4 @@ GROUP BY VE.CodiceMezzo;
 
 L'elenco integrale di tutte le query di collaudo e di analisi statistica previste dalla specifica è consultabile ed eseguibile nel file [`SQL/Interrogazioni.sql`](SQL/Interrogazioni.sql).
 
-<p align="right"><a href="#top">⬆ Torna su</a></p>.
+<p align="center"><a href="#top">⬆ Torna su</a></p>
