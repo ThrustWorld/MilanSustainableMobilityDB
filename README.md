@@ -20,6 +20,8 @@
 
 Relational database system designed to model and manage the shared urban green mobility infrastructure for the Municipality of Milan (*Comune di Milano*). The system coordinates docked municipal bicycles (both traditional and pedal-assisted), electric vehicle rental fleets (cars and scooters), citizen subscription tiers, reservation lifecycles, and cycle route usage statistics.
 
+Detailed functional requirements, domain constraints, and operational targets are documented in [`Docs/Requisiti_progetto.pdf`](Docs/Requisiti_progetto.pdf).
+
 
 ## Domain Entity Mapping
 
@@ -105,6 +107,8 @@ Primary keys are underlined; referential constraints are maintained across relat
   * `CASCADE` on `RESIDENTE`: User account deletion automatically purges associated bookings and transit records.
   * `NO ACTION` on `DEPOSITO` and `PUNTO_DI_NOLEGGIO`: Prevents accidental deletion of physical stations containing active vehicles.
 
+The complete DDL implementation—comprising table creation, domain `CHECK` constraints, foreign keys, and seed data population—can be found in [`SQL/Struttura_e_popolamento.sql`](SQL/Struttura_e_popolamento.sql).
+
 
 ## Analytical Queries Showcase
 
@@ -166,6 +170,8 @@ GROUP BY VE.CodiceMezzo;
 | `21` | 1 |
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
+
+The full suite of analytical queries, aggregation logic, and reporting statements is available in [`SQL/Interrogazioni.sql`](SQL/Interrogazioni.sql).
 
 
 <a id="it"></a>
@@ -264,7 +270,7 @@ Tutti i requisiti operativi sono formalizzati tramite vincoli SQL espliciti nel 
   * `CASCADE` su `RESIDENTE`: Rimuovendo un cittadino, le relative prenotazioni e statistiche d'uso vengono eliminate a cascata per garantire la consistenza referenziale.
   * `NO ACTION` su `DEPOSITO` e `PUNTO_DI_NOLEGGIO`: Impedisce l'eliminazione fisica di stazioni o depositi qualora vi siano ancora mezzi o biciclette ad essi assegnati.
 
-Lo script DDL completo con la definizione di tutte le tabelle, i vincoli `CHECK`, le chiavi primarie/esterne e il popolamento con i dati di test è disponibile nel file [`SQL/Struttura_e_popolamento.sql`](SQL/Struttura_e_popolamento.sql)
+Lo script DDL completo con la definizione di tutte le tabelle, i vincoli `CHECK`, le chiavi primarie/esterne e il popolamento con i dati di test è disponibile nel file [`SQL/Struttura_e_popolamento.sql`](SQL/Struttura_e_popolamento.sql).
 
 
 ## Interrogazioni SQL di Esempio
@@ -328,4 +334,4 @@ GROUP BY VE.CodiceMezzo;
 | `22` | 1 |
 | `23`–`30`, `41`–`43`, `49`–`50` | 0 |
 
-L'elenco integrale di tutte le query di collaudo e di analisi statistica previste dalla specifica è consultabile ed eseguibile nel file [`SQL/Interrogazioni.sql`](SQL/Interrogazioni.sql)
+L'elenco integrale di tutte le query di collaudo e di analisi statistica previste dalla specifica è consultabile ed eseguibile nel file [`SQL/Interrogazioni.sql`](SQL/Interrogazioni.sql).
