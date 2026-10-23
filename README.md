@@ -176,6 +176,23 @@ Progettazione concettuale, logica e fisica di una base di dati relazionale a sup
 Il sistema gestisce il parco biciclette condivise (tradizionali e a pedalata assistita), la flotta di veicoli elettrici a noleggio (scooter e automobili), i profili dei residenti con relative fasce di abbonamento agevolato, le prenotazioni e il monitoraggio statistico dei transiti sulle piste ciclabili cittadine.
 
 
+## Mappatura delle Entità di Dominio
+
+Di seguito viene riportata la mappatura concettuale tra le tabelle relazionali implementate nella base di dati e i relativi requisiti di business:
+
+| Tabella Relazionale | Concetto di Business | Descrizione e Ruolo nello Schema |
+| :--- | :--- | :--- |
+| `RESIDENTE` | Cittadino / Utente | Residenti del Comune di Milano registrati al servizio, suddivisi nelle categorie *Standard* e *Premium* (questi ultimi con diritto a percentuali di sconto sui noleggi).[cite: 1, 14, 22] |
+| `MEZZO` | Mezzo Generico | Entità padre astratta che garantisce un codice identificativo univoco (`CodiceMezzo`) a tutti i veicoli della flotta comunale.[cite: 15, 23] |
+| `BICICLETTA` | Bicicletta Condivisa | Biciclette (sia tradizionali che a pedalata assistita) distribuite nei depositi territoriali, fruibili gratuitamente dai residenti registrati.[cite: 1, 14, 24] |
+| `VEICOLO_ELETTRICO` | Veicolo Elettrico | Flotta a motore a tariffazione oraria (scooter e automobili), descritta da autonomia, targa, cilindrata e punto di noleggio di assegnazione.[cite: 1, 14, 24, 25] |
+| `DEPOSITO` | Deposito Biciclette | Stazioni fisiche diffuse in città, georeferenziate tramite coordinate (latitudine e longitudine), dotate di capienza massima e conteggio bici presenti.[cite: 1, 14, 23] |
+| `PUNTO_DI_NOLEGGIO` | Punto Noleggio EV | Hub fisici presidiati con recapiti di contatto (telefono, email, sito web) a cui sono associati in modo univoco i veicoli elettrici.[cite: 1, 14, 23] |
+| `PRENOTAZIONE` | Noleggio / Prenotazione | Registrazione dell'evento di noleggio che associa un utente a un mezzo, definendo data/ora di inizio, data/ora di fine e l'eventuale costo complessivo.[cite: 1, 14, 25] |
+| `PISTA_CICLABILE` | Pista Ciclabile | Tracciati ciclabili comunali censiti tramite identificativo progressivo, lunghezza chilometrica e pendenza media.[cite: 1, 14, 22] |
+| `STATISTICA` | Registro Transiti | Entità di collegamento per raccogliere dati aggregati a fini statistici: memorizza per ogni residente e per ogni pista le date e la frequenza di passaggio.[cite: 1, 14, 26] |
+
+
 ## Architettura e Scelte di Progettazione
 
 ### 1. Schema E-R Concettuale (con Generalizzazioni)
