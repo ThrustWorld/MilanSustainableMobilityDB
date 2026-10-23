@@ -375,17 +375,15 @@ WHERE CodiceMezzo = 51;
 DELETE FROM MEZZO 
 WHERE CodiceMezzo = 99;
 
-/* 
 -- [ENG] Delete the data related to a resident who has made at least one reservation, 
-		 having defined appropriate violation remediation policies (first identify a 
-		 resident who has made at least one reservation and then delete the user from 
-		 the corresponding table, without previously deleting their reservations).
+--		 having defined appropriate violation remediation policies (first identify a 
+--		 resident who has made at least one reservation and then delete the user from 
+--		 the corresponding table, without previously deleting their reservations).
 
 -- [IT] Eliminare i dati relativi ad un residente che ha effettuato almeno una prenotazione, 
-		avendo specificato opportune politiche di rimedio alle violazioni 
-	 	(individuare prima un residente che ha effettuato almeno una prenotazione e poi eliminare 
-	 	l’utente dalla tabella corrispondente, senza aver eliminato precedentemente le sue prenotazioni).
-*/
+--		avendo specificato opportune politiche di rimedio alle violazioni 
+--	 	(individuare prima un residente che ha effettuato almeno una prenotazione e poi eliminare 
+--	 	l’utente dalla tabella corrispondente, senza aver eliminato precedentemente le sue prenotazioni).
 
 SELECT * 
 FROM PRENOTAZIONE
