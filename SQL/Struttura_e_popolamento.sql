@@ -1,3 +1,5 @@
+-- [ENG] DATABASE DEFINITION (TABLES, INTEGRITY CONSTRAINTS) | [IT] DEFINIZIONE DEL DATABASE (TABELLE, VINCOLI DI INTEGRITA')
+
 CREATE TABLE RESIDENTE
 (
 	CodiceFiscale CHAR(16) PRIMARY KEY,
@@ -129,6 +131,7 @@ CREATE TABLE STATISTICA
 	ON UPDATE CASCADE
 );
 
+-- [ENG] SEED DATA | [IT] POPOLAMENTO DEI DATI NELLE TABELLE
 
 INSERT INTO RESIDENTE VALUES
 ('RSSMRA85M01H501Z', 'Mario', 'Rossi', '021234567', 'Via Roma', '10', '20121', 'mario.rossi@email.it', 'Pass_123', TRUE, 10.00),
@@ -295,6 +298,8 @@ INSERT INTO STATISTICA VALUES
 ('2026-05-14', 'BNCLRA92H41F205W', 4, 3),
 ('2026-05-15', 'NOCLRA95E41F205Q', 1, 1);
 
+-- [ENG] SAMPLE UPDATE/DELETE STATEMENTS | [IT] ISTRUZIONI DIMOSTRATIVE DI MODIFICA/ELIMINAZIONE
+
 UPDATE RESIDENTE 
 SET NumeroDiTelefono = '0299887766' 
 WHERE CodiceFiscale = 'VRNLCU86T10A345K';
@@ -370,6 +375,17 @@ WHERE CodiceMezzo = 51;
 DELETE FROM MEZZO 
 WHERE CodiceMezzo = 99;
 
+/* 
+-- [ENG] Delete the data related to a resident who has made at least one reservation, 
+		 having defined appropriate violation remediation policies (first identify a 
+		 resident who has made at least one reservation and then delete the user from 
+		 the corresponding table, without previously deleting their reservations).
+
+-- [IT] Eliminare i dati relativi ad un residente che ha effettuato almeno una prenotazione, 
+		avendo specificato opportune politiche di rimedio alle violazioni 
+	 	(individuare prima un residente che ha effettuato almeno una prenotazione e poi eliminare 
+	 	l’utente dalla tabella corrispondente, senza aver eliminato precedentemente le sue prenotazioni).
+*/
 
 SELECT * 
 FROM PRENOTAZIONE
