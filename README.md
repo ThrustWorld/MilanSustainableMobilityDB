@@ -1,12 +1,7 @@
 # Urban Sustainable Mobility Database (Milan)
 
 <div align="center">
-
-[![RDBMS](https://img.shields.io/badge/RDBMS-MySQL%208.0-blue.svg)](https://www.mysql.com/)
-[![License](https://img.shields.io/badge/License-Academic%20Project-lightgrey.svg)]()
-
-<br>
-
+  
 **Click below to switch language / Clicca sotto per cambiare lingua:**
 
 </div>
@@ -18,13 +13,13 @@
 
 <br>
 
-## 📌 Project Overview
+## Project Overview
 
 Relational database system designed to model and manage the shared urban green mobility infrastructure for the Municipality of Milan (*Comune di Milano*). The system coordinates docked municipal bicycles (both traditional and pedal-assisted), electric vehicle rental fleets (cars and scooters), citizen subscription tiers, reservation lifecycles, and cycle route usage statistics.
 
 ---
 
-## 📖 Domain Entity Mapping
+## Domain Entity Mapping
 
 The physical database schema implements standard Italian domain naming. The table below maps internal relational tables to their English business concepts:
 
@@ -42,7 +37,7 @@ The physical database schema implements standard Italian domain naming. The tabl
 
 ---
 
-## 🏛 Conceptual & Logical Architecture
+## Conceptual & Logical Architecture
 
 ### 1. Conceptual E-R Model
 The initial conceptual schema established three key generalization hierarchies ($ISA$):
@@ -80,7 +75,7 @@ Primary keys are underlined; referential constraints are maintained across relat
 
 ---
 
-## 🛡 Business Rules & Integrity Constraints
+## Business Rules & Integrity Constraints
 
 * **Subscription Discount Coherence**: Standard accounts cannot have discounts, while Premium accounts must have a discount strictly between $0\%$ and $100\%$:
   ```sql
@@ -112,7 +107,7 @@ Primary keys are underlined; referential constraints are maintained across relat
 
 ---
 
-## 📊 Analytical Queries Showcase
+## Analytical Queries Showcase
 
 ### 1. Pedal-Assisted Bikes Booked by Premium Users
 Finds all pedal-assisted bicycles (`Tipo = TRUE`) reserved by registered Premium citizens:
@@ -175,7 +170,7 @@ GROUP BY VE.CodiceMezzo;
 
 ---
 
-## 🚀 Setup & Execution
+## Setup & Execution
 
 1. Clone this repository:
    ```bash
@@ -198,7 +193,7 @@ GROUP BY VE.CodiceMezzo;
 
 <br>
 
-## 📌 Descrizione del Progetto
+## Descrizione del Progetto
 
 Progettazione concettuale, logica e fisica di una base di dati relazionale a supporto del servizio di mobilità sostenibile promosso dal **Comune di Milano**. 
 
@@ -206,7 +201,7 @@ Il sistema gestisce il parco biciclette condivise (tradizionali e a pedalata ass
 
 ---
 
-## 🏛 Architettura e Scelte di Progettazione
+## Architettura e Scelte di Progettazione
 
 ### 1. Schema E-R Concettuale (con Generalizzazioni)
 Durante la prima fase di modellazione sono state formalizzate tre gerarchie di generalizzazione ($ISA$):
@@ -244,7 +239,7 @@ Rappresentazione del modello logico con identificazione delle chiavi primarie (s
 
 ---
 
-## 🛡 Vincoli di Integrità e Regole di Business
+## Vincoli di Integrità e Regole di Business
 
 Tutti i requisiti operativi sono formalizzati tramite vincoli SQL espliciti nel DDL:
 
@@ -278,7 +273,7 @@ Tutti i requisiti operativi sono formalizzati tramite vincoli SQL espliciti nel 
 
 ---
 
-## 📊 Interrogazioni SQL di Esempio
+## Interrogazioni SQL di Esempio
 
 ### 1. Bici a Pedalata Assistita Prenotate da Utenti Premium
 Estrae tutte le biciclette a pedalata assistita (`Tipo = TRUE`) prenotate da residenti con abbonamento Premium:
@@ -341,7 +336,7 @@ GROUP BY VE.CodiceMezzo;
 
 ---
 
-## 🚀 Istruzioni per l'Esecuzione
+## Istruzioni per l'Esecuzione
 
 1. Clonare la repository locale:
    ```bash
